@@ -16,12 +16,15 @@ class RomanNumeralsTest {
         return Stream.of(
                 of(1, "I"),
                 of(3, "III"),
+                of(4, "IV"),
                 of(5, "V"),
                 of(10, "X"),
+                of(13, "XIII"),
                 of(50, "L"),
                 of(100, "C"),
                 of(500, "D"),
-                of(1000, "M")
+                of(1000, "M"),
+                of(2499, "MMCDXCIX")
         );
     }
 
