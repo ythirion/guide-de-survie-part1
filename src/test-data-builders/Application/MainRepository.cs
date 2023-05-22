@@ -14,7 +14,7 @@ namespace Application
 {
     public static class MainRepository
     {
-        public static IRepository ConfiguredRepository { get; private set; } = new JsonRepository();
+        public static IRepository ConfiguredRepository { get; private set; }
 
         /**
          * Working effectively with Legacy Code
@@ -29,7 +29,7 @@ namespace Application
         // TESTING ONLY
         public static void Reset()
         {
-            ConfiguredRepository = new JsonRepository();
+            ConfiguredRepository = null;
         }
     }
 }

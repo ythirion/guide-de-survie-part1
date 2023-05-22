@@ -6,6 +6,10 @@ using Application.Report;
 using Application.Tests.Storage;
 using FluentAssertions;
 using Xunit;
+using static Application.Tests.Builders.Countries;
+using static Application.Tests.Builders.PurchasedBookTestDataBuilder;
+using static Application.Tests.Builders.InvoiceTestDataBuilder;
+using static Application.Tests.Report.ReportGeneratorTestDataBuilder;
 
 namespace Application.Tests.Report
 {
@@ -72,15 +76,10 @@ namespace Application.Tests.Report
         }
 
         [Fact]
-        public void Test_Data_Builders_Constraint_Converts_total_amount_to_usd()
+        public void Converts_total_amount_to_usd_with_test_data_builders()
         {
             // Using the Test Data Builder pattern:
-            // Instantiate a ReportGenerator
-            // It needs to use a data source that contains one invoice in a non-USD currency
-            // Assert that the amount returned by ReportGenerator is converted to USD currency
-            //
-            // Regarding the data source, take a look at MainRepository: it'll allow you to plug a test data source to ReportGenerator
-            // Don't forget to reset the data source at the end of your test!
+            // Rewrite the test above
         }
     }
 }
