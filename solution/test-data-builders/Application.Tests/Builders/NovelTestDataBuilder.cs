@@ -7,16 +7,16 @@ namespace Application.Tests.Builders
     public class NovelTestDataBuilder
     {
         private double _price = 10;
-        public static NovelTestDataBuilder ANovel() => new NovelTestDataBuilder();
+        public static NovelTestDataBuilder ANovel() => new();
 
         public NovelTestDataBuilder Costing(double price)
         {
-            this._price = price;
+            _price = price;
             return this;
         }
 
         public Novel Build()
-            => new Novel("Le Horla",
+            => new("Le Horla",
                 _price,
                 new Author("Guy de Maupassant", Countries.France),
                 Language.French,

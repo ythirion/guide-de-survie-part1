@@ -11,13 +11,13 @@ namespace Application.Tests.Builders
 
         public PurchasedBookTestDataBuilder InQuantity(int quantity)
         {
-            this._quantity = quantity;
+            _quantity = quantity;
             return this;
         }
 
-        public PurchasedBook Build() => new PurchasedBook(_book, _quantity);
+        public PurchasedBook Build() => new(_book, _quantity);
 
-        private static PurchasedBookTestDataBuilder APurchasedBook() => new PurchasedBookTestDataBuilder();
+        private static PurchasedBookTestDataBuilder APurchasedBook() => new();
 
         public static PurchasedBookTestDataBuilder ANovel(Action<NovelTestDataBuilder> settings)
         {

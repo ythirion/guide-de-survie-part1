@@ -9,7 +9,7 @@ namespace Application.Tests.Builders
         private PurchasedBookTestDataBuilder[] _purchasedBooks;
         private Country _country;
 
-        public static InvoiceTestDataBuilder AnInvoice() => new InvoiceTestDataBuilder();
+        public static InvoiceTestDataBuilder AnInvoice() => new();
 
         public InvoiceTestDataBuilder Containing(params PurchasedBookTestDataBuilder[] purchasedBooks)
         {

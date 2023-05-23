@@ -11,8 +11,8 @@ namespace Application.Tests.Report
         private ReportGeneratorTestDataBuilder(InMemoryRepository invoiceRepository) =>
             _invoiceRepository = invoiceRepository;
 
-        public static ReportGeneratorTestDataBuilder AReport(InMemoryRepository inMemoryRepository)
-            => new ReportGeneratorTestDataBuilder(inMemoryRepository);
+        public static ReportGeneratorTestDataBuilder AReport(InMemoryRepository inMemoryRepository) =>
+            new(inMemoryRepository);
 
         public ReportGeneratorTestDataBuilder Containing(InvoiceTestDataBuilder anInvoice)
         {
@@ -20,6 +20,6 @@ namespace Application.Tests.Report
             return this;
         }
 
-        public ReportGenerator Build() => new ReportGenerator();
+        public ReportGenerator Build() => new();
     }
 }

@@ -9,18 +9,18 @@ namespace Application.Tests.Builders
 
         public EducationalBookTestDataBuilder Costing(double price)
         {
-            this._price = price;
+            _price = price;
             return this;
         }
 
         public EducationalBook Build()
-            => new EducationalBook("Clean Code",
+            => new("Clean Code",
                 _price,
                 new Author("Uncle Bob", Countries.Usa),
                 Language.English,
                 Category.Computer
             );
 
-        public static EducationalBookTestDataBuilder AnEducationalBook() => new EducationalBookTestDataBuilder();
+        public static EducationalBookTestDataBuilder AnEducationalBook() => new();
     }
 }

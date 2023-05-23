@@ -14,7 +14,7 @@ namespace Application
 {
     public sealed class IdGenerator
     {
-        private static readonly IdGenerator ID_GENERATOR = new IdGenerator();
+        private static readonly IdGenerator ID_GENERATOR = new();
 
         private int _currentId = 0;
         
