@@ -25,7 +25,7 @@ namespace Application.Tests.Builders
 
         public Invoice Build()
         {
-            var invoice = new Invoice("John Doe", _country);
+            var invoice = new Invoice(Faker.Name.FullName(), _country);
             invoice.AddPurchasedBooks(
                 _purchasedBooks
                     .Select(builder => builder.Build())

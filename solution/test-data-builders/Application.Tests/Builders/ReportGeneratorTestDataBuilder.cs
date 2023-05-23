@@ -1,8 +1,7 @@
 using Application.Report;
-using Application.Tests.Builders;
 using Application.Tests.Storage;
 
-namespace Application.Tests.Report
+namespace Application.Tests.Builders
 {
     public class ReportGeneratorTestDataBuilder
     {

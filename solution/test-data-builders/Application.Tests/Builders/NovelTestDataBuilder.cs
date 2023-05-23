@@ -16,9 +16,9 @@ namespace Application.Tests.Builders
         }
 
         public Novel Build()
-            => new("Le Horla",
+            => new(Faker.Lorem.Paragraph(),
                 _price,
-                new Author("Guy de Maupassant", Countries.France),
+                new Author(Faker.Name.FullName(), Countries.France),
                 Language.French,
                 new List<Genre>
                 {

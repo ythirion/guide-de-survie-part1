@@ -14,9 +14,9 @@ namespace Application.Tests.Builders
         }
 
         public EducationalBook Build()
-            => new("Clean Code",
+            => new(Faker.Lorem.Sentence(),
                 _price,
-                new Author("Uncle Bob", Countries.Usa),
+                new Author(Faker.Name.FullName(), Countries.Usa),
                 Language.English,
                 Category.Computer
             );

@@ -9,7 +9,7 @@ using Xunit;
 using static Application.Tests.Builders.Countries;
 using static Application.Tests.Builders.PurchasedBookTestDataBuilder;
 using static Application.Tests.Builders.InvoiceTestDataBuilder;
-using static Application.Tests.Report.ReportGeneratorTestDataBuilder;
+using static Application.Tests.Builders.ReportGeneratorTestDataBuilder;
 
 namespace Application.Tests.Report
 {
