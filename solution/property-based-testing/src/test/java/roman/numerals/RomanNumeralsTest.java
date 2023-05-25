@@ -70,7 +70,8 @@ class RomanNumeralsTest {
     }
 
     private boolean romanCharactersAreValid(String roman) {
-        return !roman.isEmpty() && containsOnlyValidSymbols(roman);
+        return !roman.isEmpty()
+                && containsOnlyValidSymbols(roman);
     }
 
     private boolean containsOnlyValidSymbols(String roman) {
@@ -86,8 +87,7 @@ class RomanNumeralsTest {
         def("f(x) = new_f(x)")
                 .forAll(Gen.choose(-10_000, 10_000).arbitrary())
                 .suchThat(decimal ->
-                        RomanNumerals
-                                .convert(decimal)
+                        convert(decimal)
                                 .equals(RomanNumeralsV2.convert(decimal))
                 )
                 .check()

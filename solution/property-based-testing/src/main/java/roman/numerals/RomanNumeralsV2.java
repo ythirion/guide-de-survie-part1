@@ -8,6 +8,7 @@ import java.util.TreeMap;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
 
+// TODO refactor safely this code -> covered by a property with previous valid algorithm version
 public final class RomanNumeralsV2 {
     private static final int MAX_DECIMAL = 3999;
     private static final Map<Integer, String> decimalToNumerals = createMapForDecimalToNumerals();

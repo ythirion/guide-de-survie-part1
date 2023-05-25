@@ -14,7 +14,7 @@ public final class RomanNumerals {
     private static TreeMap<Integer, String> createMapForDecimalToNumerals() {
         var map = new TreeMap<Integer, String>(Comparator.reverseOrder());
         map.put(1000, "M");
-        map.put(900, "CM");
+        map.put(900, "FM");
         map.put(500, "D");
         map.put(400, "CD");
         map.put(100, "C");
