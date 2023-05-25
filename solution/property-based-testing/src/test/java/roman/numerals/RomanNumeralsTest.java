@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 import static io.vavr.test.Property.def;
@@ -14,6 +15,8 @@ import static org.junit.jupiter.params.provider.Arguments.of;
 import static roman.numerals.RomanNumerals.convert;
 
 class RomanNumeralsTest {
+    private final List<Character> validSymbols = List.of('I', 'V', 'X', 'L', 'C', 'D', 'M');
+
     private static Stream<Arguments> passingExamples() {
         return Stream.of(
                 of(1, "I"),
@@ -49,6 +52,31 @@ class RomanNumeralsTest {
                 .suchThat(decimal -> convert(decimal).isEmpty())
                 .check()
                 .assertIsSatisfied();
+    }
+
+    @Test
+    void returns_only_valid_symbols_for_valid_decimal() {
+        var validDecimal = Gen.choose(1, 3999).arbitrary();
+
+        def("valid symbols for decimal in [1; 3999]")
+                .forAll(validDecimal)
+                .suchThat(decimal ->
+                        convert(decimal)
+                                .filter(this::romanCharactersAreValid)
+                                .isPresent()
+                )
+                .check()
+                .assertIsSatisfied();
+    }
+
+    private boolean romanCharactersAreValid(String roman) {
+        return !roman.isEmpty() && containsOnlyValidSymbols(roman);
+    }
+
+    private boolean containsOnlyValidSymbols(String roman) {
+        return roman.chars()
+                .mapToObj(c -> (char) c)
+                .allMatch(validSymbols::contains);
     }
 
     @Test
