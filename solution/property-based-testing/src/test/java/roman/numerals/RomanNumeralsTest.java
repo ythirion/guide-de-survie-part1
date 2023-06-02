@@ -6,7 +6,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 import static io.vavr.test.Property.def;
@@ -15,8 +14,6 @@ import static org.junit.jupiter.params.provider.Arguments.of;
 import static roman.numerals.RomanNumerals.convert;
 
 class RomanNumeralsTest {
-    private final List<Character> validSymbols = List.of('I', 'V', 'X', 'L', 'C', 'D', 'M');
-
     private static Stream<Arguments> passingExamples() {
         return Stream.of(
                 of(1, "I"),
