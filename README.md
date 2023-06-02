@@ -9,7 +9,7 @@ Par "sauver des vies", j’entends permettre aux développeur·euses d’être e
 Ainsi nous creuserons ensemble :
 - [Le Mob Programming](#mob-programming)
 - [L’Approval Testing](#approval-testing)
-- [L’Example Mapping](#ex)
+- [L’Example Mapping](#example-mapping)
 - [Le Property-Based Testing](#property-based-testing)
 - Le Mutation Testing
 - Les communautés de pratique
