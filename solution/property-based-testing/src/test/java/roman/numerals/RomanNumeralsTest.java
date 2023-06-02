@@ -70,14 +70,7 @@ class RomanNumeralsTest {
     }
 
     private boolean romanCharactersAreValid(String roman) {
-        return !roman.isEmpty()
-                && containsOnlyValidSymbols(roman);
-    }
-
-    private boolean containsOnlyValidSymbols(String roman) {
-        return roman.chars()
-                .mapToObj(c -> (char) c)
-                .allMatch(validSymbols::contains);
+        return roman.matches("[IVXLCDM]+");
     }
 
     @Test
