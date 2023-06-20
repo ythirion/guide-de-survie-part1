@@ -11,7 +11,6 @@ Ainsi nous creuserons ensemble :
 - [Le Mob Programming](#mob-programming)
 - [L’Approval Testing](#approval-testing)
 - [L’Example Mapping](#example-mapping)
-- [Le Property-Based Testing](#property-based-testing)
 
 Vous repartirez avec le plein d’envie d’expérimentation et d’idées.
 
@@ -23,12 +22,6 @@ Vous repartirez avec le plein d’envie d’expérimentation et d’idées.
 
 ## Example Mapping
 ![Example Mapping](img/example-mapping.webp)
-
-## Property-Based Testing
-![Property-Based Testing](img/pbt.webp)
-
-### Vidéo - un cas d'école pour le Property-Based Testing
-[![A case study for PBT](img/use-case-pbt-video.webp)](https://youtu.be/cuJQalf-tps "A case study for Property-Based Testing")
 
 ## "Solution"
 Pour chaque pratique technique, ce repository contient 1 exemple de code ainsi qu'une proposition de solution utilisant la technique spécifiée dans le répertoire `solution`.
