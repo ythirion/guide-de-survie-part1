@@ -9,9 +9,9 @@ import static java.util.Optional.empty;
 import static java.util.Optional.of;
 
 public final class RomanNumerals {
-    private static final Map<Integer, String> decimalToNumerals = createMapForDecimalToNumerals();
+    private static final Map<Integer, String> intToNumerals = createMapForIntegerToNumerals();
 
-    private static TreeMap<Integer, String> createMapForDecimalToNumerals() {
+    private static TreeMap<Integer, String> createMapForIntegerToNumerals() {
         var map = new TreeMap<Integer, String>(Comparator.reverseOrder());
         map.put(1000, "M");
         map.put(900, "FM");
@@ -30,15 +30,15 @@ public final class RomanNumerals {
         return map;
     }
 
-    public static Optional<String> convert(int decimalNumber) {
-        if (decimalNumber != 0) {
+    public static Optional<String> convert(int number) {
+        if (number != 0) {
             var roman = new StringBuilder();
-            var remaining = decimalNumber;
+            var remaining = number;
 
-            for (var decimalToNumber : decimalToNumerals.entrySet()) {
-                while (remaining >= decimalToNumber.getKey()) {
-                    roman.append(decimalToNumber.getValue());
-                    remaining -= decimalToNumber.getKey();
+            for (var toRoman : intToNumerals.entrySet()) {
+                while (remaining >= toRoman.getKey()) {
+                    roman.append(toRoman.getValue());
+                    remaining -= toRoman.getKey();
                 }
             }
             return of(roman.toString());

@@ -36,7 +36,7 @@ class RomanNumeralsTest {
 
     @ParameterizedTest()
     @MethodSource("passingExamples")
-    void generate_roman_for_decimal_numbers(int number, String expectedRoman) {
+    void generate_roman_for_numbers(int number, String expectedRoman) {
         assertThat(convert(number))
                 .isPresent()
                 .contains(expectedRoman);

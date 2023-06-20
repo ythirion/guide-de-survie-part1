@@ -10,10 +10,10 @@ import static java.util.Optional.of;
 
 // TODO refactor safely this code -> covered by a property with previous valid algorithm version
 public final class RomanNumeralsV2 {
-    private static final int MAX_DECIMAL = 3999;
-    private static final Map<Integer, String> decimalToNumerals = createMapForDecimalToNumerals();
+    private static final int MAX_NUMBER = 3999;
+    private static final Map<Integer, String> intToNumerals = createMapForIntegerToNumerals();
 
-    private static TreeMap<Integer, String> createMapForDecimalToNumerals() {
+    private static TreeMap<Integer, String> createMapForIntegerToNumerals() {
         var map = new TreeMap<Integer, String>(Comparator.reverseOrder());
         map.put(1000, "M");
         map.put(900, "CM");
@@ -32,26 +32,26 @@ public final class RomanNumeralsV2 {
         return map;
     }
 
-    public static Optional<String> convert(int decimalNumber) {
-        return isInRange(decimalNumber)
-                ? convertSafely(decimalNumber)
+    public static Optional<String> convert(int number) {
+        return isInRange(number)
+                ? convertSafely(number)
                 : empty();
     }
 
-    private static Optional<String> convertSafely(int decimalNumber) {
+    private static Optional<String> convertSafely(int number) {
         var roman = new StringBuilder();
-        var remaining = decimalNumber;
+        var remaining = number;
 
-        for (var decimalToNumber : decimalToNumerals.entrySet()) {
-            while (remaining >= decimalToNumber.getKey()) {
-                roman.append(decimalToNumber.getValue());
-                remaining -= decimalToNumber.getKey();
+        for (var toRoman : intToNumerals.entrySet()) {
+            while (remaining >= toRoman.getKey()) {
+                roman.append(toRoman.getValue());
+                remaining -= toRoman.getKey();
             }
         }
         return of(roman.toString());
     }
 
-    private static boolean isInRange(int decimalNumber) {
-        return decimalNumber > 0 && decimalNumber <= MAX_DECIMAL;
+    private static boolean isInRange(int number) {
+        return number > 0 && number <= MAX_NUMBER;
     }
 }

@@ -32,31 +32,31 @@ class RomanNumeralsTest {
 
     @ParameterizedTest()
     @MethodSource("passingExamples")
-    void generate_roman_for_decimal_numbers(int number, String expectedRoman) {
+    void generate_roman_for_numbers(int number, String expectedRoman) {
         assertThat(convert(number))
                 .isPresent()
                 .contains(expectedRoman);
     }
 
     @Test
-    void returns_empty_for_any_decimal_out_of_range() {
-        var invalidDecimal = Gen.choose(-10_000, 10_000)
+    void returns_empty_for_any_number_out_of_range() {
+        var invalidNumbers = Gen.choose(-10_000, 10_000)
                 .arbitrary()
                 .filter(x -> x <= 0 || x > 3999);
 
         def("empty for numbers <= 0 or > 3999")
-                .forAll(invalidDecimal)
+                .forAll(invalidNumbers)
                 .suchThat(decimal -> convert(decimal).isEmpty())
                 .check()
                 .assertIsSatisfied();
     }
 
     @Test
-    void returns_only_valid_symbols_for_valid_decimal() {
-        var validDecimal = Gen.choose(1, 3999).arbitrary();
+    void returns_only_valid_symbols_for_valid_numbers() {
+        var validNumbers = Gen.choose(1, 3999).arbitrary();
 
         def("valid symbols for decimal in [1; 3999]")
-                .forAll(validDecimal)
+                .forAll(validNumbers)
                 .suchThat(decimal ->
                         convert(decimal)
                                 .filter(this::romanCharactersAreValid)
